@@ -17,54 +17,90 @@ export default function StitchLiveAIDemo() {
       desc: "Conversational, real-time answers to reproductive health questions — in the language you're most comfortable in.",
       icon: MessageSquare,
       iconColor: 'text-[#FF4288]',
+      iconHoverBg: 'group-hover:bg-[#FF4288]',
+      iconHoverText: 'group-hover:text-white',
+      iconHoverShadow: 'group-hover:shadow-pink-500/25',
       bgColor: 'bg-pink-50',
       borderColor: 'border-pink-100',
-      hoverBorder: 'hover:border-pink-200'
+      cardHoverBg: 'hover:bg-gradient-to-br hover:from-pink-500/[0.08] hover:via-white hover:to-pink-500/[0.03]',
+      hoverBorder: 'hover:border-[#FF4288]/50',
+      hoverShadow: 'hover:shadow-pink-500/10',
+      titleHoverColor: 'group-hover:text-[#FF4288]'
     },
     {
       title: 'Health tracking dashboard',
       desc: 'Log cycles, pregnancies, symptoms, medications, and appointments in one private, personal record.',
       icon: LayoutDashboard,
       iconColor: 'text-purple-600',
+      iconHoverBg: 'group-hover:bg-purple-600',
+      iconHoverText: 'group-hover:text-white',
+      iconHoverShadow: 'group-hover:shadow-purple-500/25',
       bgColor: 'bg-purple-50',
       borderColor: 'border-purple-100',
-      hoverBorder: 'hover:border-purple-200'
+      cardHoverBg: 'hover:bg-gradient-to-br hover:from-purple-500/[0.08] hover:via-white hover:to-purple-500/[0.03]',
+      hoverBorder: 'hover:border-purple-400/60',
+      hoverShadow: 'hover:shadow-purple-500/10',
+      titleHoverColor: 'group-hover:text-purple-600'
     },
     {
       title: 'Offline-first',
       desc: 'Engineered for unreliable connectivity, with minimal data use — no signal, no problem.',
       icon: WifiOff,
       iconColor: 'text-emerald-600',
+      iconHoverBg: 'group-hover:bg-emerald-600',
+      iconHoverText: 'group-hover:text-white',
+      iconHoverShadow: 'group-hover:shadow-emerald-500/25',
       bgColor: 'bg-emerald-50',
       borderColor: 'border-emerald-100',
-      hoverBorder: 'hover:border-emerald-200'
+      cardHoverBg: 'hover:bg-gradient-to-br hover:from-emerald-500/[0.08] hover:via-white hover:to-emerald-500/[0.03]',
+      hoverBorder: 'hover:border-emerald-400/60',
+      hoverShadow: 'hover:shadow-emerald-500/10',
+      titleHoverColor: 'group-hover:text-emerald-600'
     },
     {
       title: 'Voice input',
       desc: 'Speak your question, hear the answer — built for users with limited literacy.',
       icon: Mic,
       iconColor: 'text-indigo-600',
+      iconHoverBg: 'group-hover:bg-indigo-600',
+      iconHoverText: 'group-hover:text-white',
+      iconHoverShadow: 'group-hover:shadow-indigo-500/25',
       bgColor: 'bg-indigo-50',
       borderColor: 'border-indigo-100',
-      hoverBorder: 'hover:border-indigo-200'
+      cardHoverBg: 'hover:bg-gradient-to-br hover:from-indigo-500/[0.08] hover:via-white hover:to-indigo-500/[0.03]',
+      hoverBorder: 'hover:border-indigo-400/60',
+      hoverShadow: 'hover:shadow-indigo-500/10',
+      titleHoverColor: 'group-hover:text-indigo-600'
     },
     {
       title: 'Pregnancy & menopause modules',
       desc: 'Weekly development updates during pregnancy; symptom management guidance through menopause.',
       icon: Baby,
       iconColor: 'text-rose-600',
+      iconHoverBg: 'group-hover:bg-rose-600',
+      iconHoverText: 'group-hover:text-white',
+      iconHoverShadow: 'group-hover:shadow-rose-500/25',
       bgColor: 'bg-rose-50',
       borderColor: 'border-rose-100',
-      hoverBorder: 'hover:border-rose-200'
+      cardHoverBg: 'hover:bg-gradient-to-br hover:from-rose-500/[0.08] hover:via-white hover:to-rose-500/[0.03]',
+      hoverBorder: 'hover:border-rose-400/60',
+      hoverShadow: 'hover:shadow-rose-500/10',
+      titleHoverColor: 'group-hover:text-rose-600'
     },
     {
       title: 'Privacy-first',
       desc: 'End-to-end encryption and strict data protection. Your data is never sold.',
       icon: ShieldCheck,
       iconColor: 'text-blue-600',
+      iconHoverBg: 'group-hover:bg-blue-600',
+      iconHoverText: 'group-hover:text-white',
+      iconHoverShadow: 'group-hover:shadow-blue-500/25',
       bgColor: 'bg-blue-50',
       borderColor: 'border-blue-100',
-      hoverBorder: 'hover:border-blue-200'
+      cardHoverBg: 'hover:bg-gradient-to-br hover:from-blue-500/[0.08] hover:via-white hover:to-blue-500/[0.03]',
+      hoverBorder: 'hover:border-blue-400/60',
+      hoverShadow: 'hover:shadow-blue-500/10',
+      titleHoverColor: 'group-hover:text-blue-600'
     }
   ];
 
@@ -92,20 +128,20 @@ export default function StitchLiveAIDemo() {
         </div>
       </div>
 
-      {/* 6 Feature Cards Grid */}
+      {/* 6 Feature Cards Grid with Custom Color Hover Gradients */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
         {features.map((f, i) => {
           const Icon = f.icon;
           return (
             <div
               key={i}
-              className={`bg-white border border-gray-100 rounded-[2rem] p-7 sm:p-8 shadow-sm hover:shadow-xl ${f.hoverBorder} transition-all duration-300 card-hover flex flex-col justify-between`}
+              className={`group bg-white ${f.cardHoverBg} border border-gray-100 ${f.hoverBorder} rounded-[2rem] p-7 sm:p-8 shadow-sm hover:shadow-xl ${f.hoverShadow} transition-all duration-300 card-hover flex flex-col justify-between cursor-pointer`}
             >
               <div>
-                <div className={`w-12 h-12 rounded-2xl ${f.bgColor} ${f.iconColor} border ${f.borderColor} flex items-center justify-center mb-6 shadow-xs`}>
+                <div className={`w-12 h-12 rounded-2xl ${f.bgColor} ${f.iconColor} border ${f.borderColor} ${f.iconHoverBg} ${f.iconHoverText} group-hover:scale-110 group-hover:shadow-md ${f.iconHoverShadow} flex items-center justify-center mb-6 shadow-xs transition-all duration-300`}>
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2.5">
+                <h3 className={`text-xl font-bold text-gray-900 ${f.titleHoverColor} transition-colors mb-2.5`}>
                   {f.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
