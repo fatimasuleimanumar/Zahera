@@ -21,42 +21,43 @@ export default function StitchPrivacySection() {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-br from-[#E62E6B] via-[#9333EA] to-[#4F46E5] text-white py-20 sm:py-28 my-16 relative overflow-hidden" id="privacy">
-      {/* Ambient Glowing Background Blooms */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/20 blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-pink-400/25 blur-[100px] pointer-events-none" />
+    <section className="w-full bg-gradient-to-r from-[#FF387D] via-[#FF5E93] to-[#FF94BA] text-white py-20 sm:py-28 my-16 relative overflow-hidden shadow-inner" id="privacy">
+      {/* Ambient Frosted Lighting Blooms */}
+      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-white/35 blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#FFE4EE]/40 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-pink-300/20 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
         {/* Left Side: Privacy Content & Pillars */}
         <div className="text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 text-white border border-white/30 text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-md">
-            <ShieldCheck className="w-3.5 h-3.5 text-pink-200" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/25 text-white border border-white/40 text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-md shadow-xs">
+            <ShieldCheck className="w-3.5 h-3.5 text-white" />
             <span>Privacy</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-            What you tell Zahera <span className="text-pink-200">stays with you.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4 drop-shadow-xs">
+            What you tell Zahera <span className="text-pink-100">stays with you.</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-white/90 leading-relaxed mb-8">
+          <p className="text-base sm:text-lg text-white/95 font-medium leading-relaxed mb-8 drop-shadow-xs">
             Reproductive health is personal. We built the whole system around that, not as an afterthought.
           </p>
 
-          {/* 3 Numbered Privacy Items */}
+          {/* 3 Numbered Glassmorphic Privacy Items */}
           <div className="space-y-4">
             {privacyPillars.map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md hover:bg-white/20 transition-all"
+                className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white/20 hover:bg-white/30 border border-white/35 backdrop-blur-md transition-all duration-300 shadow-sm"
               >
-                <div className="text-xl sm:text-2xl font-mono font-extrabold text-pink-200 shrink-0 pt-0.5">
+                <div className="text-xl sm:text-2xl font-mono font-black text-white shrink-0 pt-0.5 drop-shadow-xs">
                   {item.num}
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-bold text-white mb-1">
+                  <h4 className="text-base sm:text-lg font-extrabold text-white mb-1">
                     {item.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-white/85 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/90 font-medium leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -67,7 +68,7 @@ export default function StitchPrivacySection() {
 
         {/* Right Side: Uploaded Image Frame with Floating Privacy Badge */}
         <div className="relative">
-          <div className="rounded-[2.2rem] overflow-hidden shadow-2xl border-2 border-white/30 h-[440px] sm:h-[500px] lg:h-[540px] w-full bg-black/20">
+          <div className="rounded-[2.2rem] overflow-hidden shadow-2xl border-2 border-white/40 h-[440px] sm:h-[500px] lg:h-[540px] w-full bg-pink-900/10">
             <img
               src="/assets/privacy-women-group.jpg"
               alt="Nigerian women smiling and feeling empowered with Zahera"
@@ -76,13 +77,13 @@ export default function StitchPrivacySection() {
           </div>
 
           {/* Floating Privacy Shield Badge */}
-          <div className="absolute -bottom-4 -left-4 sm:bottom-6 sm:-left-6 z-20 bg-black/55 backdrop-blur-xl border border-white/30 p-4 rounded-2xl text-white shadow-2xl flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-pink-500/30 border border-pink-300/50 flex items-center justify-center text-pink-200">
+          <div className="absolute -bottom-4 -left-4 sm:bottom-6 sm:-left-6 z-20 bg-white/95 backdrop-blur-xl border border-white/80 p-4 rounded-2xl text-gray-900 shadow-2xl flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#FF4288] text-white flex items-center justify-center shadow-sm">
               <Lock className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-extrabold text-xs text-white leading-tight">100% Private & Protected</h4>
-              <p className="text-[10px] text-pink-100 font-medium">On-Device Zero Data Brokering</p>
+              <h4 className="font-black text-xs text-gray-900 leading-tight">100% Private & Protected</h4>
+              <p className="text-[10px] text-gray-600 font-bold">On-Device Zero Data Brokering</p>
             </div>
           </div>
         </div>
