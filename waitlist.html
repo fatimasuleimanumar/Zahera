@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the VIP Pilot Waitlist — Zahera | SaaS FemTech</title>
+<meta name="description" content="Join over 1,000 women already waiting for Zahera. Be first to access our pilot launches across Kaduna, Kano, Lagos, and Abuja.">
+<link rel="canonical" href="https://www.zahera.tech/waitlist.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Join the Zahera VIP Waitlist">
+<meta property="og:description" content="1,000+ women are already waiting. Be first to try Zahera when pilot invitations open.">
+<meta property="og:image" content="https://www.zahera.tech/assets/og-cover.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23F04C8A'/%3E%3Cpath d='M12 21s-7-4.35-9.5-9C.5 7.5 3 3 7 3c2 0 4 1.2 5 3 1-1.8 3-3 5-3 4 0 6.5 4.5 4.5 9-2.5 4.65-9.5 9-9.5 9z' fill='%238B3DB8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" data-internal class="nav-logo">
+        <span class="logo-ribbon-badge">🌸</span>
+        <span>ZAHERA<span class="logo-pink-text">.TECH</span></span>
+      </a>
+
+      <div class="nav-menu-links">
+        <a href="about.html" data-internal data-i18n="nav_about">About us</a>
+        <a href="features.html" data-internal data-i18n="nav_features">Features</a>
+        <a href="about.html#traction" data-internal>Research & Grants</a>
+        <a href="faq.html" data-internal data-i18n="nav_faq">FAQ</a>
+        <a href="contact.html" data-internal data-i18n="nav_contact">Find support</a>
+      </div>
+
+      <div class="nav-action-group">
+        <div class="lang-select-wrap">
+          <button class="lang-select-btn" id="langBtn" aria-haspopup="true">
+            <span>🌐</span> <span id="langBtnLabel">EN</span>
+          </button>
+          <div class="lang-dropdown-menu" id="langMenu"></div>
+        </div>
+
+        <a href="index.html#ai-talk" class="nav-btn-chat">
+          <span>🌸</span> AI Chat 24/7
+        </a>
+
+        <a href="waitlist.html" data-internal class="nav-btn-donate" data-i18n="nav_cta">
+          Join Waitlist
+        </a>
+
+        <button class="nav-mobile-toggle" id="navMenuBtn" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-nav-drawer" id="mobileMenu">
+      <a href="index.html" data-internal data-i18n="nav_home">Home</a>
+      <a href="about.html" data-internal data-i18n="nav_about">About us</a>
+      <a href="features.html" data-internal data-i18n="nav_features">Features</a>
+      <a href="waitlist.html" data-internal class="active" data-i18n="nav_waitlist">Waitlist</a>
+      <a href="faq.html" data-internal data-i18n="nav_faq">FAQ</a>
+      <a href="contact.html" data-internal data-i18n="nav_contact">Find support</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="hero-section" style="padding-bottom:20px;">
+    <span class="pill-tag-badge" style="background:var(--primary-pill); color:var(--primary-pill-text); margin-bottom:12px;">Early VIP Access</span>
+    <h1 class="hero-title" style="margin-top:8px;">
+      Be First to Experience | <span class="title-accent">Zahera</span>
+    </h1>
+    <p class="hero-subtext">
+      We are piloting first across Kaduna and Kano, with Lagos and Abuja opening soon. Register below to receive your VIP invite.
+    </p>
+  </section>
+
+  <!-- WAITLIST FORM -->
+  <section style="padding:0 24px 70px;">
+    <div class="wrap">
+      <div class="waitlist-card-box">
+        <form class="waitlist-form">
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div class="form-group-pink" style="text-align:left;">
+              <label for="wEmail">Email Address:</label>
+              <input type="email" id="wEmail" required placeholder="name@example.com" class="waitlist-input-pink" style="width:100%; padding:14px 18px; border-radius:var(--radius-full); border:1.5px solid var(--border-pink); background:var(--canvas-soft-pink);">
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; text-align:left;">
+              <div class="form-group-pink">
+                <label for="wCity">City in Nigeria:</label>
+                <select id="wCity" style="width:100%; padding:14px 18px; border-radius:var(--radius-full); border:1.5px solid var(--border-pink); background:var(--canvas-soft-pink);">
+                  <option value="Kaduna">📍 Kaduna (Pilot Live)</option>
+                  <option value="Kano">📍 Kano (Pilot Live)</option>
+                  <option value="Lagos">📍 Lagos (Expanding Next)</option>
+                  <option value="Abuja">📍 Abuja</option>
+                  <option value="Port Harcourt">📍 Port Harcourt</option>
+                  <option value="Ibadan">📍 Ibadan</option>
+                  <option value="Other">📍 Other Nigerian City</option>
+                </select>
+              </div>
+
+              <div class="form-group-pink">
+                <label for="wStage">Primary Life Stage:</label>
+                <select id="wStage" style="width:100%; padding:14px 18px; border-radius:var(--radius-full); border:1.5px solid var(--border-pink); background:var(--canvas-soft-pink);">
+                  <option value="Cycle">Cycle & Period Tracking</option>
+                  <option value="Pregnancy">Pregnancy & Antenatal</option>
+                  <option value="Menopause">Menopause Support</option>
+                  <option value="HealthWorker">Doctor / Midwife / Clinic</option>
+                  <option value="General">General Wellness</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-pill-primary" style="justify-content:center; width:100%; font-size:1rem; margin-top:8px;">
+              Get VIP Pilot Access <span>🎉</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="form-success-box" style="margin-top:20px; display:none; background:#F2FBF6; border:1px solid #10B981; border-radius:var(--radius-md); padding:20px;">
+          <h4 style="color:#065F46;">🎉 You are on the VIP List! Welcome to Zahera.</h4>
+          <p style="font-size:0.86rem; color:#065F46; margin:6px 0 10px;">Share your exclusive VIP invite link to jump ahead in the onboarding queue:</p>
+          <div style="background:#fff; border:1px dashed #10B981; padding:8px 14px; border-radius:8px; display:inline-flex; align-items:center; gap:10px; font-family:'Space Mono'; font-size:0.8rem; color:#065F46;">
+            <span>https://www.zahera.tech/?ref=VIP-PILOT</span>
+            <button type="button" class="copy-ref-btn" style="border:none; background:#10B981; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.75rem; cursor:pointer;">Copy</button>
+          </div>
+        </div>
+
+        <p style="font-size:0.8rem; color:var(--ink-muted); margin-top:16px;">No spam. Strictly one email when pilot access opens for your city.</p>
+      </div>
+
+      <!-- ROADMAP -->
+      <div style="margin-top:60px;">
+        <div style="text-align:center; margin-bottom:32px;">
+          <span class="pill-tag-badge" style="background:var(--primary-pill); color:var(--primary-pill-text);">Pilot Roadmap</span>
+          <h2 style="font-size:2rem; margin-top:8px;">Deployment Schedule</h2>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-item" style="background:var(--surface-card-pink); border-radius:var(--radius-lg); border:1px solid var(--border-pink);">
+            <span class="pill-tag-badge" style="background:#fff; color:var(--primary-pink); margin-bottom:12px;">Phase 1 · Active</span>
+            <h3>Kaduna State</h3>
+            <p>Integrated with Primary Health Care Centres for cycle tracking trials and clinical referrals.</p>
+          </div>
+          <div class="pillar-item" style="background:var(--surface-card-pink); border-radius:var(--radius-lg); border:1px solid var(--border-pink);">
+            <span class="pill-tag-badge" style="background:#fff; color:var(--primary-pink); margin-bottom:12px;">Phase 1 · Active</span>
+            <h3>Kano State</h3>
+            <p>Grassroots testing of Hausa voice AI with local women's empowerment organizations.</p>
+          </div>
+          <div class="pillar-item" style="background:var(--surface-card-pink); border-radius:var(--radius-lg); border:1px solid var(--border-pink);">
+            <span class="pill-tag-badge" style="background:#fff; color:var(--primary-pink); margin-bottom:12px;">Phase 2 · Expanding</span>
+            <h3>Lagos & Abuja</h3>
+            <p>Finalizing community health clinic networks and expanded Yorùbá and Igbo coverage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-disclaimer-card" data-i18n="footer_disclaimer">
+      Zahera provides general reproductive health guidance developed with Nigerian clinicians and is not a replacement for emergency hospital care. Always consult qualified health professionals for urgent symptoms.
+    </div>
+    <div class="footer-main-row">
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:8px;">
+          <span class="logo-ribbon-badge">🌸</span>
+          <span>ZAHERA<span class="logo-pink-text">.TECH</span></span>
+        </a>
+        <p style="font-size:0.86rem; color:var(--ink-body); max-width:320px; line-height:1.55;" data-i18n="footer_tagline">Your AI health companion. In your language. Even offline.</p>
+      </div>
+      <div style="display:flex; gap:40px; flex-wrap:wrap;">
+        <div>
+          <h4 style="font-size:0.82rem; font-family:'Space Mono'; text-transform:uppercase; color:var(--primary-pink); margin-bottom:12px;">Platform</h4>
+          <div style="display:flex; flex-direction:column; gap:8px; font-size:0.88rem; color:var(--ink-body);">
+            <a href="features.html" data-internal>Features Deep Dive</a>
+            <a href="about.html" data-internal>About us & Team</a>
+            <a href="waitlist.html" data-internal>VIP Waitlist</a>
+            <a href="faq.html" data-internal>FAQ & Help</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:0.82rem; font-family:'Space Mono'; text-transform:uppercase; color:var(--primary-pink); margin-bottom:12px;">Company & Legal</h4>
+          <div style="display:flex; flex-direction:column; gap:8px; font-size:0.88rem; color:var(--ink-body);">
+            <a href="contact.html" data-internal>Contact</a>
+            <a href="privacy.html" data-internal>Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      <div>© 2026 Teem Tech Solutions Ltd. All rights reserved.</div>
+    </div>
+  </footer>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
