@@ -167,24 +167,53 @@ nav {
   gap: 12px;
 }
 
-.btn-nav-primary {
-  background: var(--primary-dark);
+.btn-nav-primary,
+.nav-btn-donate,
+.btn-pill-primary {
+  background: #FF4288;
   color: #FFFFFF;
-  padding: 9px 22px;
+  padding: 10px 24px;
   border-radius: var(--radius-full);
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px rgba(255, 66, 136, 0.3);
   transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
 }
 
-.btn-nav-primary:hover {
-  background: #000000;
+.btn-nav-primary:hover,
+.nav-btn-donate:hover,
+.btn-pill-primary:hover {
+  background: #E03375;
   transform: translateY(-1.5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 18px rgba(255, 66, 136, 0.45);
+}
+
+.nav-btn-chat {
+  background: #FFF5F8;
+  color: #FF4288;
+  border: 1px solid rgba(255, 66, 136, 0.2);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-btn-chat:hover {
+  background: #FFE4EE;
+  border-color: rgba(255, 66, 136, 0.35);
+}
+
+.logo-pink-text {
+  color: #FF4288;
 }
 
 .nav-mobile-toggle {

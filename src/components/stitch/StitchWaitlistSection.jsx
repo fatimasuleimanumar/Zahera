@@ -26,7 +26,7 @@ export default function StitchWaitlistSection({ onJoinWaitlist }) {
             href="https://forms.gle/QRuTUvbqB3L2rk5e6"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-gradient-to-r from-[#D81B60] via-[#C2185B] to-[#8E24AA] hover:opacity-95 text-white font-extrabold text-base sm:text-lg shadow-lg shadow-pink-500/25 transition-all transform hover:scale-105 active:scale-95 cursor-pointer"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-gradient-to-r from-[#FF387D] via-[#FF5E93] to-[#FF4288] hover:opacity-95 text-white font-extrabold text-base sm:text-lg shadow-lg shadow-pink-500/25 transition-all transform hover:scale-105 active:scale-95 cursor-pointer"
           >
             Join waitlist
           </a>

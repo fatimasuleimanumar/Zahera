@@ -61,7 +61,7 @@ export default function HeroCluster({ onJoinWaitlist, onExploreFeatures }) {
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <button
               onClick={onJoinWaitlist}
-              className="bg-[#e600ac] hover:bg-[#c90096] text-white px-6 py-3.5 rounded-full font-medium transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2 cursor-pointer hover:shadow-pink-500/50 hover:-translate-y-0.5"
+              className="bg-[#FF4288] hover:bg-[#E03375] text-white px-6 py-3.5 rounded-full font-medium transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2 cursor-pointer hover:shadow-pink-500/50 hover:-translate-y-0.5"
             >
               <span>Join the pilot waitlist</span>
               <ArrowRight className="w-4 h-4" />
