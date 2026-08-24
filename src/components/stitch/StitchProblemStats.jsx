@@ -3,7 +3,7 @@ import { Stethoscope, WifiOff, ShieldCheck } from 'lucide-react';
 
 export default function StitchProblemStats() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 text-left" id="problem">
+    <section className="max-w-[1140px] mx-auto px-6 sm:px-10 py-16 mb-12 text-left" id="problem">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left Side: Asymmetric Photo & Metric Mosaic (Matching User Reference) */}
         <div className="grid grid-cols-2 gap-4 items-stretch">

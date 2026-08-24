@@ -92,7 +92,7 @@ export default function StitchCycleTracker() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 text-left" id="tracker">
+    <section className="max-w-[1140px] mx-auto px-6 sm:px-10 py-16 mb-12 text-left" id="tracker">
       <div className="mb-10">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mb-2 tracking-tight">
           Interactive Cycle & Pregnancy Tracker

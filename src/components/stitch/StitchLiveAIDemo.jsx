@@ -80,7 +80,7 @@ export default function StitchLiveAIDemo() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 text-left" id="live-demo">
+    <section className="max-w-[1140px] mx-auto px-6 sm:px-10 py-16 mb-12 text-left" id="live-demo">
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         {/* Left Side: Interactive Demo Controls */}
         <div className="w-full lg:w-1/2">

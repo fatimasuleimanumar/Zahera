@@ -62,8 +62,8 @@ export default function HomePage({ setCurrentView }) {
       />
 
       {/* 4. Bento Grid: Explore our key modules and capabilities */}
-      <section className="w-full py-16 px-4 sm:px-6 bg-white" id="capabilities">
-        <div className="max-w-[1280px] mx-auto">
+      <section className="w-full py-16 bg-white" id="capabilities">
+        <div className="max-w-[1140px] mx-auto px-6 sm:px-10">
           <div className="text-center max-w-[680px] mx-auto mb-14">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mb-3 tracking-tight">
               Explore our key modules and capabilities
@@ -193,7 +193,7 @@ export default function HomePage({ setCurrentView }) {
 
       {/* 7. Clinical Partnerships & Pilots */}
       <section className="w-full py-20 px-4 sm:px-6 bg-[#F8F9FB] border-y border-[#E5E7EB]" id="partners">
-        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 items-center">
+        <div className="max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 items-center">
           {/* Photo Frame */}
           <div className="h-[400px] rounded-[36px] overflow-hidden shadow-lg border border-[#E5E7EB]">
             <img
@@ -245,7 +245,7 @@ export default function HomePage({ setCurrentView }) {
 
       {/* 8. Trust Banner */}
       <section className="w-full py-20 px-4 sm:px-6 bg-white">
-        <div className="max-w-[1280px] mx-auto bg-[#F8F9FB] border border-[#E5E7EB] rounded-[40px] p-10 sm:p-16 text-center">
+        <div className="max-w-[1140px] mx-auto bg-[#F8F9FB] border border-[#E5E7EB] rounded-[40px] p-10 sm:p-16 text-center">
           <div className="inline-flex items-center -space-x-2 mb-4">
             <img src="/assets/team-surayya.jpg" alt="Doctor" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
             <img src="/assets/team-fatima.jpg" alt="Doctor" className="w-10 h-10 rounded-full border-2 border-white object-cover" />

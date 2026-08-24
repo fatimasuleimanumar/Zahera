@@ -2,15 +2,16 @@
    ZAHERA TECH — INTERACTIVE SCRIPT & ANIMATION CONTROLS
    =========================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   // 1. Hero Card Loading Progress Bar & Counter Animation
   const heroProgressBar = document.getElementById('heroProgressBar');
   const heroStatNumber = document.getElementById('heroStatNumber');
 
   if (heroProgressBar) {
-    setTimeout(() => {
-      heroProgressBar.style.width = '94%';
-    }, 250);
+    heroProgressBar.classList.remove('hero-progress-animated');
+    // Trigger reflow to restart animation on fresh page load
+    void heroProgressBar.offsetWidth;
+    heroProgressBar.classList.add('hero-progress-animated');
   }
 
   if (heroStatNumber) {
@@ -229,4 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

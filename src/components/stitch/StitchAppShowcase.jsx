@@ -40,7 +40,7 @@ export default function StitchAppShowcase({ onJoinWaitlist }) {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 text-left" id="mobile-app">
+    <section className="max-w-[1140px] mx-auto px-6 sm:px-10 py-16 mb-12 text-left" id="mobile-app">
       <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.1fr] gap-12 lg:gap-16 items-center">
         {/* Left Side: Mobile App Mockup with Floating UI Cards (Matching Uploaded Design) */}
         <div className="relative flex justify-center items-center py-8">

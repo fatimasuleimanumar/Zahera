@@ -93,6 +93,16 @@
     50% { height: 26px; }
   }
 
+  /* Hero 94% Loading Bar Keyframe */
+  @keyframes fillProgress94 {
+    0% { width: 0%; }
+    100% { width: 94%; }
+  }
+
+  .hero-progress-animated {
+    animation: fillProgress94 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   .animate-float-slow { animation: floatSlow 5s ease-in-out infinite; }
   .animate-float-delayed { animation: floatDelayed 6s ease-in-out infinite 1s; }
   .animate-pulse-glow { animation: pulseGlow 2.5s infinite; }
@@ -167,8 +177,8 @@
   <!-- END: Header -->
 
   <main class="pt-24 pb-20">
-    <!-- BEGIN: Hero Section -->
-    <section class="max-w-[1440px] w-full mx-auto px-3 sm:px-6 mb-20">
+    <!-- BEGIN: Hero Section (Wider with max-w-[1440px]) -->
+    <section class="max-w-[1440px] w-full mx-auto px-3 sm:px-6 mb-24">
       <div class="relative rounded-[2.5rem] overflow-hidden min-h-[580px] lg:min-h-[620px] flex items-center bg-gray-900 shadow-2xl">
         <!-- Background Image -->
         <div class="absolute inset-0">
@@ -222,13 +232,13 @@
             <!-- Animated Loading Progress Bar -->
             <div class="mb-2">
               <div class="h-2 w-full bg-white/20 rounded-full overflow-hidden p-0.5">
-                <div id="heroProgressBar" class="h-full bg-gradient-to-r from-pink-400 via-[#FF4288] to-[#E600AC] rounded-full transition-all duration-1000 ease-out shadow-sm" style="width: 0%;"></div>
+                <div id="heroProgressBar" class="hero-progress-animated h-full bg-gradient-to-r from-pink-400 via-[#FF4288] to-[#E600AC] rounded-full shadow-sm" style="width: 94%;"></div>
               </div>
             </div>
 
             <!-- Animated Counter from 0 to 94% -->
             <div class="flex items-end gap-2">
-              <span id="heroStatNumber" class="text-4xl font-bold leading-none font-mono">0%</span>
+              <span id="heroStatNumber" class="text-4xl font-bold leading-none font-mono">94%</span>
               <span class="text-xs text-gray-300 leading-tight">Satisfaction<br>rate</span>
             </div>
           </div>
@@ -257,8 +267,8 @@
     </section>
     <!-- END: Hero Section -->
 
-    <!-- BEGIN: 36 Million Problem Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 mb-20 text-left" id="problem">
+    <!-- BEGIN: 36 Million Problem Section (More Contained with Increased Side Padding) -->
+    <section class="max-w-[1140px] mx-auto px-6 sm:px-10 py-12 mb-24 text-left" id="problem">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Left Side: Asymmetric Photo & Metric Mosaic -->
         <div class="grid grid-cols-2 gap-4 items-stretch">
@@ -304,7 +314,7 @@
             Closing the Healthcare Gap in <span class="text-[#FF4288]">Women's Health</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-8">
+          <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-8">
             36 million Nigerian women of reproductive age lack trusted, private health information. The result? Unplanned pregnancies, undiagnosed complications, and late care-seeking. Global apps don't speak Hausa, Yorùbá, or Igbo, ignore cultural taboos, and fail without internet.
           </p>
 
@@ -319,7 +329,7 @@
                 <h4 class="text-base font-bold text-gray-900 mb-1">
                   Late Care-Seeking & Complications
                 </h4>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   Without timely, private clinical advice, complications during pregnancy and cycle abnormalities go unnoticed until emergencies occur.
                 </p>
               </div>
@@ -334,7 +344,7 @@
                 <h4 class="text-base font-bold text-gray-900 mb-1">
                   Language & Offline Barriers
                 </h4>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   Global health apps only support English and require constant mobile data, leaving millions of women in grassroots communities excluded.
                 </p>
               </div>
@@ -349,7 +359,7 @@
                 <h4 class="text-base font-bold text-gray-900 mb-1">
                   Stigma-Free Cultural Privacy
                 </h4>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   Zahera provides discrete, physician-reviewed answers in native languages directly on-device without fear of judgment.
                 </p>
               </div>
@@ -360,8 +370,8 @@
     </section>
     <!-- END: 36 Million Problem Section -->
 
-    <!-- BEGIN: Mobile App Life-Stage Mockup Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 mb-20 text-left" id="mobile-app">
+    <!-- BEGIN: Mobile App Life-Stage Mockup Section (Contained) -->
+    <section class="max-w-[1140px] mx-auto px-6 sm:px-10 py-12 mb-24 text-left" id="mobile-app">
       <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_1.1fr] gap-12 lg:gap-16 items-center">
         <!-- Left Side: Smartphone Mockup with Floating Cards -->
         <div class="relative flex justify-center items-center py-8">
@@ -563,8 +573,8 @@
     </section>
     <!-- END: Mobile App Life-Stage Mockup Section -->
 
-    <!-- BEGIN: Live AI Assistant Demo -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 mb-24" id="demo">
+    <!-- BEGIN: Live AI Assistant Demo (Contained) -->
+    <section class="max-w-[1140px] mx-auto px-6 sm:px-10 mb-24" id="demo">
       <div class="flex flex-col lg:flex-row gap-12 items-center">
         <div class="w-full lg:w-1/2">
           <h2 class="text-3xl font-bold mb-3">Live AI Health Assistant Demo</h2>
@@ -685,8 +695,8 @@
     </section>
     <!-- END: Live AI Assistant Demo -->
 
-    <!-- BEGIN: Cycle & Pregnancy Tracker -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 mb-24" id="tracker">
+    <!-- BEGIN: Cycle & Pregnancy Tracker (Contained) -->
+    <section class="max-w-[1140px] mx-auto px-6 sm:px-10 mb-24" id="tracker">
       <h2 class="text-3xl font-bold mb-2">Interactive Cycle & Pregnancy Tracker</h2>
       <p class="text-gray-600 mb-10">Explore how Zahera calculates your cycle and milestones.</p>
 
@@ -796,7 +806,7 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-gray-100 bg-white py-12 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-gray-500">
+    <div class="max-w-[1140px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-gray-500">
       <div class="flex items-center gap-2">
         <svg fill="none" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#e600ac"></path>
