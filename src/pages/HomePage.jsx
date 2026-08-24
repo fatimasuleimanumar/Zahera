@@ -4,6 +4,7 @@ import StitchProblemStats from '../components/stitch/StitchProblemStats';
 import StitchAppShowcase from '../components/stitch/StitchAppShowcase';
 import StitchLiveAIDemo from '../components/stitch/StitchLiveAIDemo';
 import StitchPrivacySection from '../components/stitch/StitchPrivacySection';
+import StitchWaitlistSection from '../components/stitch/StitchWaitlistSection';
 
 export default function HomePage({ setCurrentView }) {
   const [activePartnerIndex, setActivePartnerIndex] = useState(0);
@@ -56,6 +57,14 @@ export default function HomePage({ setCurrentView }) {
 
       {/* 5. Stitch: Full-Width Gradient Privacy Section with Uploaded Photo */}
       <StitchPrivacySection />
+
+      {/* 6. Stitch: Dedicated Waitlist CTA Section Matching User Design */}
+      <StitchWaitlistSection
+        onJoinWaitlist={() => {
+          setCurrentView('waitlist');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      />
 
       {/* 6. Clinical Partnerships & Pilots */}
       <section className="w-full py-20 px-4 sm:px-6 bg-[#F8F9FB] border-y border-[#E5E7EB]" id="partners">
