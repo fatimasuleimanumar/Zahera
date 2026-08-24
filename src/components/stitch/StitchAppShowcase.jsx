@@ -40,8 +40,8 @@ export default function StitchAppShowcase({ onJoinWaitlist }) {
   ];
 
   return (
-    <section className="max-w-[1140px] mx-auto px-6 sm:px-10 py-16 mb-12 text-left" id="mobile-app">
-      <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.1fr] gap-12 lg:gap-16 items-center">
+    <section className="w-full bg-gradient-to-b from-[#FFF5F8] via-[#FFF0F5]/80 to-[#FFF5F8] py-20 sm:py-24 my-16 border-y border-pink-100/60 text-left relative overflow-hidden" id="mobile-app">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-[1.1fr_1.1fr] gap-12 lg:gap-16 items-center relative z-10">
         {/* Left Side: Mobile App Mockup with Floating UI Cards (Matching Uploaded Design) */}
         <div className="relative flex justify-center items-center py-8">
           {/* Floating Card 1: Top-Left ("Made for Her") */}
@@ -207,7 +207,7 @@ export default function StitchAppShowcase({ onJoinWaitlist }) {
 
           {/* 4 Life-Stage Explanatory Highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="bg-[#F8F9FB] border border-gray-100 p-4 rounded-2xl">
+            <div className="bg-white border border-pink-100/90 shadow-xs hover:border-pink-300 hover:shadow-md transition-all p-4 rounded-2xl">
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="text-lg">🌸</span>
                 <h4 className="font-bold text-sm text-gray-900">Adolescence (10–19)</h4>
@@ -217,7 +217,7 @@ export default function StitchAppShowcase({ onJoinWaitlist }) {
               </p>
             </div>
 
-            <div className="bg-[#F8F9FB] border border-gray-100 p-4 rounded-2xl">
+            <div className="bg-white border border-pink-100/90 shadow-xs hover:border-pink-300 hover:shadow-md transition-all p-4 rounded-2xl">
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="text-lg">💜</span>
                 <h4 className="font-bold text-sm text-gray-900">Adult Reproductive</h4>
@@ -227,7 +227,7 @@ export default function StitchAppShowcase({ onJoinWaitlist }) {
               </p>
             </div>
 
-            <div className="bg-[#F8F9FB] border border-gray-100 p-4 rounded-2xl">
+            <div className="bg-white border border-pink-100/90 shadow-xs hover:border-pink-300 hover:shadow-md transition-all p-4 rounded-2xl">
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="text-lg">👶</span>
                 <h4 className="font-bold text-sm text-gray-900">Pregnancy Care</h4>
@@ -237,7 +237,7 @@ export default function StitchAppShowcase({ onJoinWaitlist }) {
               </p>
             </div>
 
-            <div className="bg-[#F8F9FB] border border-gray-100 p-4 rounded-2xl">
+            <div className="bg-white border border-pink-100/90 shadow-xs hover:border-pink-300 hover:shadow-md transition-all p-4 rounded-2xl">
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="text-lg">✨</span>
                 <h4 className="font-bold text-sm text-gray-900">Menopause (45+)</h4>
