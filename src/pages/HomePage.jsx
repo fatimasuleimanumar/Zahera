@@ -27,14 +27,15 @@ export default function HomePage({ setCurrentView }) {
     }
   ];
 
+  const handleJoinWaitlist = () => {
+    window.open('https://forms.gle/QRuTUvbqB3L2rk5e6', '_blank');
+  };
+
   return (
     <div className="w-full bg-white text-[#111827]">
       {/* 1. Hero Section */}
       <HeroCluster
-        onJoinWaitlist={() => {
-          setCurrentView('waitlist');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onJoinWaitlist={handleJoinWaitlist}
         onExploreFeatures={() => {
           setCurrentView('features');
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -46,10 +47,7 @@ export default function HomePage({ setCurrentView }) {
 
       {/* 3. Mobile App Life Stage Mockup Showcase */}
       <StitchAppShowcase
-        onJoinWaitlist={() => {
-          setCurrentView('waitlist');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onJoinWaitlist={handleJoinWaitlist}
       />
 
       {/* 4. What's Inside Feature Suite (6 Pillars with Bespoke Icons) */}
@@ -60,10 +58,7 @@ export default function HomePage({ setCurrentView }) {
 
       {/* 6. Stitch: Dedicated Waitlist CTA Section Matching User Design */}
       <StitchWaitlistSection
-        onJoinWaitlist={() => {
-          setCurrentView('waitlist');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onJoinWaitlist={handleJoinWaitlist}
       />
 
       {/* 6. Clinical Partnerships & Pilots */}
