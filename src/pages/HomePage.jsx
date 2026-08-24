@@ -3,7 +3,7 @@ import HeroCluster from '../components/HeroCluster';
 import StitchProblemStats from '../components/stitch/StitchProblemStats';
 import StitchAppShowcase from '../components/stitch/StitchAppShowcase';
 import StitchLiveAIDemo from '../components/stitch/StitchLiveAIDemo';
-import StitchCycleTracker from '../components/stitch/StitchCycleTracker';
+import StitchPrivacySection from '../components/stitch/StitchPrivacySection';
 
 export default function HomePage({ setCurrentView }) {
   const [activePartnerIndex, setActivePartnerIndex] = useState(0);
@@ -54,8 +54,8 @@ export default function HomePage({ setCurrentView }) {
       {/* 4. What's Inside Feature Suite (6 Pillars with Bespoke Icons) */}
       <StitchLiveAIDemo />
 
-      {/* 5. Stitch: Interactive Cycle Tracker & Pregnancy Milestones */}
-      <StitchCycleTracker />
+      {/* 5. Stitch: Full-Width Gradient Privacy Section with Uploaded Photo */}
+      <StitchPrivacySection />
 
       {/* 6. Clinical Partnerships & Pilots */}
       <section className="w-full py-20 px-4 sm:px-6 bg-[#F8F9FB] border-y border-[#E5E7EB]" id="partners">
