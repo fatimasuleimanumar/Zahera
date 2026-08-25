@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Globe, Menu, X, Sparkles } from 'lucide-react';
+import { Globe, Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Navbar({ currentView, setCurrentView }) {
   const { lang, changeLanguage, t, languages, currentLangObj } = useLanguage();
@@ -8,11 +8,11 @@ export default function Navbar({ currentView, setCurrentView }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { id: 'about', label: t('nav_about') },
-    { id: 'features', label: t('nav_features') },
-    { id: 'research', label: t('nav_research') },
-    { id: 'faq', label: t('nav_faq') },
-    { id: 'contact', label: t('nav_contact') },
+    { id: 'home', label: 'Home' },
+    { id: 'features', label: 'Features' },
+    { id: 'about', label: 'About Us' },
+    { id: 'faq', label: 'FAQ' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   const handleNavClick = (viewId) => {
@@ -22,51 +22,56 @@ export default function Navbar({ currentView, setCurrentView }) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#F5D6E3] py-4">
-      <div className="max-w-[1140px] mx-auto px-6 flex items-center justify-between gap-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100 transition-all">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2 font-extrabold text-[1.35rem] text-[#241629] tracking-tight cursor-pointer"
+          className="flex items-center gap-2 group cursor-pointer text-left"
         >
-          <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#F04C8A] via-[#D82490] to-[#8B3DB8] text-white flex items-center justify-center text-sm shadow-md shadow-pink-500/20">
-            🌸
-          </span>
-          <span>
-            ZAHERA<span className="text-[#F04C8A]">.TECH</span>
+          <div className="transform group-hover:rotate-12 transition-transform duration-300">
+            <svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#FF4288"></path>
+              <circle cx="16" cy="16" fill="white" r="4"></circle>
+            </svg>
+          </div>
+          <span className="text-xl font-bold text-gray-900 group-hover:text-[#FF4288] transition-colors">
+            Zahera Tech
           </span>
         </button>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-6 text-[0.92rem] font-medium text-[#66536C]">
+        <nav className="hidden md:flex items-center gap-8 font-medium text-gray-600">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className={`hover:text-[#F04C8A] transition-colors cursor-pointer ${
-                currentView === link.id ? 'text-[#F04C8A] font-bold' : ''
+              className={`hover:text-[#FF4288] transition-colors cursor-pointer ${
+                currentView === link.id
+                  ? 'border-b-2 pb-1 text-[#FF4288] border-[#FF4288] font-bold'
+                  : ''
               }`}
             >
               {link.label}
             </button>
           ))}
-        </div>
+        </nav>
 
         {/* Action Group */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {/* Language Switcher */}
           <div className="relative">
             <button
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#F5D6E3] bg-white text-xs font-mono font-bold text-[#241629] shadow-sm hover:border-[#F04C8A] transition cursor-pointer"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-colors text-sm font-medium cursor-pointer"
               aria-label="Change Language"
             >
-              <Globe className="w-3.5 h-3.5 text-[#F04C8A]" />
-              <span>{currentLangObj.short}</span>
+              <Globe className="w-4 h-4 text-gray-600" />
+              <span>{currentLangObj?.label || 'English'}</span>
             </button>
 
             {langMenuOpen && (
-              <div className="absolute right-0 mt-2 w-44 bg-white border border-[#F5D6E3] rounded-2xl shadow-xl overflow-hidden z-50 animate-in fade-in">
+              <div className="absolute right-0 mt-2 w-36 bg-white border border-gray-100 rounded-2xl shadow-xl z-50 overflow-hidden">
                 {languages.map((l) => (
                   <button
                     key={l.code}
@@ -74,72 +79,68 @@ export default function Navbar({ currentView, setCurrentView }) {
                       changeLanguage(l.code);
                       setLangMenuOpen(false);
                     }}
-                    className={`w-full text-left px-4 py-2.5 text-xs flex items-center justify-between border-b border-[#FEEBF1] last:border-0 hover:bg-[#FEEBF1] transition cursor-pointer ${
-                      lang === l.code ? 'bg-[#FEEBF1] text-[#F04C8A] font-bold' : 'text-[#241629]'
+                    className={`w-full text-left px-4 py-2 text-xs font-semibold hover:bg-pink-50 cursor-pointer flex justify-between items-center ${
+                      lang === l.code ? 'bg-pink-50 text-[#FF4288] font-bold' : 'text-gray-800'
                     }`}
                   >
                     <span>{l.label}</span>
-                    <span className="font-mono text-[10px] text-[#9E89A3]">{l.short}</span>
+                    <span className="font-mono text-[10px] text-gray-400 font-bold">{l.short}</span>
                   </button>
                 ))}
               </div>
             )}
           </div>
 
-          {/* AI Chat Pill */}
-          <button
-            onClick={() => {
-              if (currentView !== 'home') setCurrentView('home');
-              setTimeout(() => {
-                const el = document.getElementById('ai-talk');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#FDE8F1] text-[#C41C65] text-xs font-bold hover:bg-[#FBD3E4] transition cursor-pointer"
-          >
-            <span>🌸</span>
-            <span>AI Chat 24/7</span>
-          </button>
-
           {/* Join Waitlist Pill */}
-          <button
-            onClick={() => handleNavClick('waitlist')}
-            className="inline-flex items-center gap-1 px-5 py-2 rounded-full bg-[#F04C8A] hover:bg-[#C71F68] text-white text-xs font-bold shadow-md shadow-pink-500/25 transition cursor-pointer"
+          <a
+            href="https://forms.gle/QRuTUvbqB3L2rk5e6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#FF4288] hover:bg-[#E03375] text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
           >
-            <span>{t('nav_cta')}</span>
-          </button>
+            <span>Join Waitlist</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg border border-[#F5D6E3] text-[#241629]"
-            aria-label="Toggle menu"
+            className="md:hidden p-2 text-gray-700 hover:text-[#FF4288] focus:outline-none cursor-pointer"
+            aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden px-6 pt-3 pb-4 bg-white border-t border-[#F5D6E3] flex flex-col gap-2">
+        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 px-6 py-4 space-y-3 shadow-lg">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className="text-left py-2 text-sm font-semibold border-b border-[#FEEBF1] text-[#241629]"
+              className={`block w-full text-left py-2 border-b border-gray-100 ${
+                currentView === link.id
+                  ? 'text-[#FF4288] font-bold'
+                  : 'text-gray-700 hover:text-[#FF4288] font-medium'
+              }`}
             >
               {link.label}
             </button>
           ))}
-          <button
-            onClick={() => handleNavClick('waitlist')}
-            className="mt-2 w-full py-2.5 rounded-full bg-[#F04C8A] text-white text-xs font-bold text-center"
-          >
-            {t('nav_cta')}
-          </button>
+          <div className="pt-2">
+            <a
+              href="https://forms.gle/QRuTUvbqB3L2rk5e6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-full py-2.5 rounded-full bg-[#FF4288] hover:bg-[#E03375] text-white font-medium shadow-md transition-colors"
+            >
+              Join Waitlist
+            </a>
+          </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

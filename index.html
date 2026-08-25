@@ -167,9 +167,25 @@
           </div>
         </div>
 
-        <a href="https://forms.gle/QRuTUvbqB3L2rk5e6" target="_blank" rel="noopener noreferrer" class="bg-[#FF4288] hover:bg-[#E03375] text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
-          <span>Join Waitlist</span>
-          <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        <!-- Mobile Hamburger Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-700 hover:text-[#FF4288] focus:outline-none cursor-pointer" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDrawer" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 px-6 py-4 space-y-3 shadow-lg">
+      <a class="block py-2 text-[#FF4288] font-bold border-b border-gray-100" href="index.html">Home</a>
+      <a class="block py-2 text-gray-700 hover:text-[#FF4288] font-medium border-b border-gray-100" href="features.html">Features</a>
+      <a class="block py-2 text-gray-700 hover:text-[#FF4288] font-medium border-b border-gray-100" href="about.html">About Us</a>
+      <a class="block py-2 text-gray-700 hover:text-[#FF4288] font-medium border-b border-gray-100" href="faq.html">FAQ</a>
+      <a class="block py-2 text-gray-700 hover:text-[#FF4288] font-medium border-b border-gray-100" href="contact.html">Contact</a>
+      <div class="pt-2">
+        <a class="flex items-center justify-center w-full py-2.5 rounded-full bg-[#FF4288] hover:bg-[#E03375] text-white font-medium shadow-md transition-colors" href="https://forms.gle/QRuTUvbqB3L2rk5e6" target="_blank" rel="noopener noreferrer">
+          Join Waitlist
         </a>
       </div>
     </div>

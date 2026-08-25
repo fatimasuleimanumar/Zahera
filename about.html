@@ -1,250 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us — Zahera | Multidisciplinary Nigerian FemTech Team</title>
-<meta name="description" content="Meet the Nigerian team behind Zahera — spanning medical obstetrics, AI engineering, data science, and public health, backed by CoElevate and nominated by UNDP.">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Us — Zahera Tech | Nigerian FemTech Leadership & Mission</title>
+<meta name="description" content="Meet the multidisciplinary Nigerian team behind Zahera — spanning medical obstetrics, AI engineering, database architecture, and public health, backed by CoElevate and nominated by UNDP.">
 <link rel="canonical" href="https://www.zahera.tech/about.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About Zahera — Our Mission & Team">
-<meta property="og:description" content="A 100% Nigerian-founded, gender-balanced team building AI-powered reproductive health guidance for 36 million underserved women.">
-<meta property="og:image" content="https://www.zahera.tech/assets/og-cover.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23F04C8A'/%3E%3Cpath d='M12 21s-7-4.35-9.5-9C.5 7.5 3 3 7 3c2 0 4 1.2 5 3 1-1.8 3-3 5-3 4 0 6.5 4.5 4.5 9-2.5 4.65-9.5 9-9.5 9z' fill='%238B3DB8'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23e600ac'/%3E%3Cpath d='M12 21s-7-4.35-9.5-9C.5 7.5 3 3 7 3c2 0 4 1.2 5 3 1-1.8 3-3 5-3 4 0 6.5 4.5 4.5 9-2.5 4.65-9.5 9-9.5 9z' fill='%23ffffff'/%3E%3C/svg%3E">
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" data-internal class="nav-logo">
-        <span class="logo-ribbon-badge">🌸</span>
-        <span>ZAHERA<span class="logo-pink-text">.TECH</span></span>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Plus Jakarta Sans', 'sans-serif'],
+        },
+        colors: {
+          magenta: '#FF4288',
+          magentaDark: '#e62e6b',
+          magentaLight: '#ffe6f0',
+          dark: '#1a1a1a',
+          grayLight: '#f5f5f7',
+          primary: '#FF4288',
+        },
+        boxShadow: {
+          'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #333;
+    background-color: #fafafa;
+  }
+  
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+  }
+
+  button, a, .card-hover {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.08);
+  }
+</style>
+</head>
+<body class="antialiased bg-[#FAFAFA] text-gray-900">
+
+  <!-- BEGIN: Header (Unified Navbar) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100 transition-all">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a class="flex items-center gap-2 group" href="index.html">
+        <div class="transform group-hover:rotate-12 transition-transform duration-300">
+          <svg fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#FF4288"></path>
+            <circle cx="16" cy="16" fill="white" r="4"></circle>
+          </svg>
+        </div>
+        <span class="text-xl font-bold text-gray-900 group-hover:text-[#FF4288] transition-colors">Zahera Tech</span>
       </a>
 
-      <div class="nav-menu-links">
-        <a href="about.html" data-internal class="active" data-i18n="nav_about">About us</a>
-        <a href="features.html" data-internal data-i18n="nav_features">Features</a>
-        <a href="about.html#traction" data-internal>Research & Grants</a>
-        <a href="faq.html" data-internal data-i18n="nav_faq">FAQ</a>
-        <a href="contact.html" data-internal data-i18n="nav_contact">Find support</a>
-      </div>
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+        <a class="hover:text-[#FF4288] transition-colors" href="index.html">Home</a>
+        <a class="hover:text-[#FF4288] transition-colors" href="features.html">Features</a>
+        <a class="border-b-2 pb-1 text-[#FF4288] border-[#FF4288] font-bold" href="about.html">About Us</a>
+        <a class="hover:text-[#FF4288] transition-colors" href="faq.html">FAQ</a>
+        <a class="hover:text-[#FF4288] transition-colors" href="contact.html">Contact</a>
+      </nav>
 
-      <div class="nav-action-group">
-        <div class="lang-select-wrap">
-          <button class="lang-select-btn" id="langBtn" aria-haspopup="true">
-            <span>🌐</span> <span id="langBtnLabel">EN</span>
+      <!-- Actions -->
+      <div class="flex items-center gap-4">
+        <!-- Language Switcher -->
+        <div class="relative">
+          <button id="langBtn" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-colors text-sm font-medium cursor-pointer">
+            <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span id="langBtnLabel">English</span>
+            <svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="12"><path d="M6 9l6 6 6-6"></path></svg>
           </button>
-          <div class="lang-dropdown-menu" id="langMenu"></div>
+          <div id="langMenu" class="hidden absolute right-0 mt-2 w-36 bg-white border border-gray-100 rounded-2xl shadow-xl z-50 overflow-hidden">
+            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-pink-50 cursor-pointer" data-lang="en">English</button>
+            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-pink-50 cursor-pointer" data-lang="pcm">Pidgin</button>
+            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-pink-50 cursor-pointer" data-lang="ha">Hausa</button>
+            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-pink-50 cursor-pointer" data-lang="yo">Yorùbá</button>
+            <button class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-pink-50 cursor-pointer" data-lang="ig">Igbo</button>
+          </div>
         </div>
 
-        <a href="index.html#ai-talk" class="nav-btn-chat">
-          <span>🌸</span> AI Chat 24/7
+        <!-- Join Waitlist Button -->
+        <a href="https://forms.gle/QRuTUvbqB3L2rk5e6" target="_blank" rel="noopener noreferrer" class="bg-[#FF4288] hover:bg-[#E03375] text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
+          <span>Join Waitlist</span>
+          <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
         </a>
 
-        <a href="https://forms.gle/QRuTUvbqB3L2rk5e6" target="_blank" rel="noopener noreferrer" data-internal class="nav-btn-donate" data-i18n="nav_cta">
+        <!-- Mobile Hamburger Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-700 hover:text-[#FF4288] focus:outline-none cursor-pointer" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDrawer" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 px-6 py-4 space-y-3 shadow-lg">
+      <a class="block py-2 text-gray-700 hover:text-[#FF4288] font-medium border-b border-gray-100" href="index.html">Home</a>
+      <a class="block py-2 text-gray-700 hover:text-[#FF4288] font-medium border-b border-gray-100" href="features.html">Features</a>
+      <a class="block py-2 text-[#FF4288] font-bold border-b border-gray-100" href="about.html">About Us</a>
+      <a class="block py-2 text-gray-700 hover:text-[#FF4288] font-medium border-b border-gray-100" href="faq.html">FAQ</a>
+      <a class="block py-2 text-gray-700 hover:text-[#FF4288] font-medium border-b border-gray-100" href="contact.html">Contact</a>
+      <div class="pt-2">
+        <a class="flex items-center justify-center w-full py-2.5 rounded-full bg-[#FF4288] hover:bg-[#E03375] text-white font-medium shadow-md transition-colors" href="https://forms.gle/QRuTUvbqB3L2rk5e6" target="_blank" rel="noopener noreferrer">
           Join Waitlist
         </a>
-
-        <button class="nav-mobile-toggle" id="navMenuBtn" aria-label="Toggle Navigation">☰</button>
       </div>
     </div>
+  </header>
+  <!-- END: Header -->
 
-    <div class="mobile-nav-drawer" id="mobileMenu">
-      <a href="index.html" data-internal data-i18n="nav_home">Home</a>
-      <a href="about.html" data-internal class="active" data-i18n="nav_about">About us</a>
-      <a href="features.html" data-internal data-i18n="nav_features">Features</a>
-      <a href="https://forms.gle/QRuTUvbqB3L2rk5e6" target="_blank" rel="noopener noreferrer" data-internal data-i18n="nav_waitlist">Waitlist</a>
-      <a href="faq.html" data-internal data-i18n="nav_faq">FAQ</a>
-      <a href="contact.html" data-internal data-i18n="nav_contact">Find support</a>
-    </div>
-  </nav>
-
-  <!-- PAGE HERO -->
-  <section class="hero-section" style="padding-bottom:20px;">
-    <span class="pill-tag-badge" style="background:var(--primary-pill); color:var(--primary-pill-text); margin-bottom:12px;">Who We Are</span>
-    <h1 class="hero-title" style="margin-top:8px;">
-      A Nigerian Team | <span class="title-accent">Building for Nigerian Women</span>
-    </h1>
-    <p class="hero-subtext">
-      Zahera is built by Teem Tech Solutions Ltd. — a 100% Nigerian-founded, gender-balanced team bridging technology, obstetrics, and public health.
-    </p>
-  </section>
-
-  <!-- MISSION & VISION 2030 -->
-  <section class="mission-split-section" style="padding-top:10px;">
-    <div class="wrap">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px;">
-        <div style="background:var(--surface-card-pink); border-radius:var(--radius-lg); padding:36px 30px; border:1px solid var(--border-pink);">
-          <span class="pill-tag-badge" style="background:#fff; color:var(--primary-pink);">Our Mission</span>
-          <h3 style="font-size:1.5rem; margin:14px 0 10px;">Empowering Millions with Dignity</h3>
-          <p style="color:var(--ink-body); font-size:0.95rem; line-height:1.65;">
-            To empower millions of underserved Nigerian girls and women from puberty through pregnancy to menopause, by providing trusted, private reproductive health guidance while generating locally representative clinical data that strengthens Africa's healthcare innovation ecosystem.
-          </p>
-        </div>
-
-        <div style="background:var(--surface-card-pink); border-radius:var(--radius-lg); padding:36px 30px; border:1px solid var(--border-pink);">
-          <span class="pill-tag-badge" style="background:#fff; color:var(--primary-pink);">Our Vision 2030</span>
-          <h3 style="font-size:1.5rem; margin:14px 0 10px;">10 Million African Women by 2030</h3>
-          <p style="color:var(--ink-body); font-size:0.95rem; line-height:1.65;">
-            To establish Zahera as Africa's premier, culturally resonant AI-powered women's health platform, reaching over 10 million active users across the continent and dramatically reducing preventable reproductive complications.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERSHIP TEAM -->
-  <section class="section-pillars" id="team">
-    <div class="wrap">
-      <div style="text-align:center; max-width:680px; margin:0 auto 40px;">
-        <span class="pill-tag-badge" style="background:var(--primary-pill); color:var(--primary-pill-text);">Core Leadership</span>
-        <h2 style="font-size:clamp(1.8rem, 3.2vw, 2.5rem); margin-top:8px;">Tech, Medicine & Data Science</h2>
-        <p style="color:var(--ink-body);">Decades of combined field execution, medical practice, database engineering, and machine learning expertise.</p>
+  <main class="pt-28 pb-20">
+    <!-- BEGIN: About Hero -->
+    <section class="max-w-5xl mx-auto px-6 text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4288]/10 border border-[#FF4288]/20 text-[#D81B60] text-xs font-bold uppercase tracking-wider mb-5">
+        <span>🇳🇬</span>
+        <span>Nigerian Founded · Gender Balanced Team</span>
       </div>
 
-      <div class="team-grid-3" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; text-align:left;">
-        <!-- Fatima -->
-        <div style="background:#fff; border:1px solid var(--border-pink); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-subtle); display:flex; flex-direction:column;">
-          <div style="width:100%; aspect-ratio:1; overflow:hidden;">
-            <img src="assets/team-fatima.jpg" alt="Fatima Suleiman Umar - Founder & Technical Director" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top;">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
+        A Nigerian Team | <span class="text-[#FF4288]">Building for Nigerian Women</span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Zahera is built by Teem Tech Solutions Ltd. — a multidisciplinary Nigerian team bridging clinical obstetrics, natural language AI, and secure offline-first mobile architecture.
+      </p>
+    </section>
+    <!-- END: About Hero -->
+
+    <!-- BEGIN: Mission & Vision Cards -->
+    <section class="max-w-6xl mx-auto px-6 mb-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Mission Card -->
+        <div class="bg-gradient-to-br from-pink-50/90 via-white to-pink-50/50 border border-pink-200/80 rounded-3xl p-8 sm:p-10 shadow-md flex flex-col justify-between">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FF4288] text-white text-xs font-bold uppercase tracking-wide mb-5 shadow-xs">
+              Our Mission
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Empowering Millions with Dignity
+            </h2>
+            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+              To empower millions of underserved Nigerian girls and women from puberty through pregnancy to menopause, by providing trusted, private reproductive health guidance while generating locally representative clinical data that strengthens Africa's healthcare innovation ecosystem.
+            </p>
           </div>
-          <div style="padding:22px; display:flex; flex-direction:column; flex:1;">
-            <h3 style="font-size:1.18rem;">Fatima Suleiman Umar</h3>
-            <span style="font-family:'Space Mono'; font-size:0.75rem; color:var(--primary-pink); font-weight:700; text-transform:uppercase; margin:4px 0 10px; display:block;">Founder & Technical Director</span>
-            <p style="font-size:0.88rem; color:var(--ink-body); line-height:1.6;">10+ years architecting and executing large-scale, data-intensive field operations for Nigerian utilities — managing budgets over ₦120M and coordinating complex multi-vendor operations. Leading Zahera’s overall vision and national rollout.</p>
+          <div class="pt-6 mt-6 border-t border-pink-100 flex items-center gap-2 text-xs font-bold text-[#D81B60]">
+            <span>🌱</span>
+            <span>Zero Judgment · Maximum Privacy</span>
+          </div>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="bg-gradient-to-br from-pink-50/90 via-white to-pink-50/50 border border-pink-200/80 rounded-3xl p-8 sm:p-10 shadow-md flex flex-col justify-between">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FF4288] text-white text-xs font-bold uppercase tracking-wide mb-5 shadow-xs">
+              Vision 2030
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              10 Million African Women Reached
+            </h2>
+            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+              To establish Zahera as Africa's premier, culturally resonant AI-powered women's health platform, reaching over 10 million active users across the continent and dramatically reducing preventable maternal and reproductive complications.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-pink-100 flex items-center gap-2 text-xs font-bold text-[#D81B60]">
+            <span>🌍</span>
+            <span>Pan-African Clinical Impact</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: Mission & Vision Cards -->
+
+    <!-- BEGIN: Leadership Team Grid -->
+    <section class="max-w-7xl mx-auto px-6 mb-24" id="team">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4288]/10 text-[#D81B60] text-xs font-bold uppercase tracking-wider mb-4">
+          Core Leadership
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight">
+          Tech, Medicine & Data Science
+        </h2>
+        <p class="text-base text-gray-600 mt-4">
+          Decades of combined field execution, obstetrics practice, secure database engineering, and machine learning expertise.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Fatima -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 hover:border-pink-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
+          <div class="w-full aspect-[4/3] overflow-hidden bg-pink-100/50">
+            <img src="assets/team-fatima.jpg" alt="Fatima Suleiman Umar - Founder & Technical Director" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-1">Fatima Suleiman Umar</h3>
+              <span class="inline-block text-xs font-bold font-mono uppercase text-[#FF4288] mb-3">Founder & Technical Director</span>
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                10+ years architecting and executing large-scale, data-intensive field operations for Nigerian utilities — managing budgets over ₦120M and coordinating complex multi-vendor operations. Leading Zahera’s overall vision and national rollout.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-100 text-xs font-medium text-gray-500">
+              Operations & Product Strategy
+            </div>
           </div>
         </div>
 
         <!-- Dr. Surayya -->
-        <div style="background:#fff; border:1px solid var(--border-pink); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-subtle); display:flex; flex-direction:column;">
-          <div style="width:100%; aspect-ratio:1; overflow:hidden;">
-            <img src="assets/team-surayya.jpg" alt="Dr. Surayya Zubair - Obstetrician & Gynaecologist" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top;">
+        <div class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 hover:border-pink-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
+          <div class="w-full aspect-[4/3] overflow-hidden bg-pink-100/50">
+            <img src="assets/team-surayya.jpg" alt="Dr. Surayya Zubair - Obstetrician & Gynaecologist" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
           </div>
-          <div style="padding:22px; display:flex; flex-direction:column; flex:1;">
-            <h3 style="font-size:1.18rem;">Dr. Surayya Zubair</h3>
-            <span style="font-family:'Space Mono'; font-size:0.75rem; color:var(--primary-pink); font-weight:700; text-transform:uppercase; margin:4px 0 10px; display:block;">Obstetrician & Gynaecologist</span>
-            <p style="font-size:0.88rem; color:var(--ink-body); line-height:1.6;">Obstetrician and gynaecologist with 10+ years in medical practice and 7+ years dedicated to obstetrics and gynaecology — managing women's health from puberty through antenatal care, delivery, and menopause.</p>
+          <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-1">Dr. Surayya Zubair</h3>
+              <span class="inline-block text-xs font-bold font-mono uppercase text-[#FF4288] mb-3">Obstetrician & Gynaecologist</span>
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Obstetrician and gynaecologist with 10+ years in medical practice and 7+ years dedicated to obstetrics and gynaecology — managing women's health from puberty through antenatal care, delivery, and menopause.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-100 text-xs font-medium text-gray-500">
+              Clinical Integrity & Decision Boundaries
+            </div>
           </div>
         </div>
 
         <!-- Aminu -->
-        <div style="background:#fff; border:1px solid var(--border-pink); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-subtle); display:flex; flex-direction:column;">
-          <div style="width:100%; aspect-ratio:1; overflow:hidden;">
-            <img src="assets/team-aminu.jpg" alt="Aminu Goni Bukar - Software & Database Engineer" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top;">
+        <div class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 hover:border-pink-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
+          <div class="w-full aspect-[4/3] overflow-hidden bg-pink-100/50">
+            <img src="assets/team-aminu.jpg" alt="Aminu Goni Bukar - Software & Database Engineer" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
           </div>
-          <div style="padding:22px; display:flex; flex-direction:column; flex:1;">
-            <h3 style="font-size:1.18rem;">Aminu Goni Bukar</h3>
-            <span style="font-family:'Space Mono'; font-size:0.75rem; color:var(--primary-pink); font-weight:700; text-transform:uppercase; margin:4px 0 10px; display:block;">Software & Database Engineer</span>
-            <p style="font-size:0.88rem; color:var(--ink-body); line-height:1.6;">Full-stack backend architect specializing in secure database infrastructure, encrypted data sync protocols, and high-availability offline-first storage engines. Guarantees NDPA security compliance.</p>
+          <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-1">Aminu Goni Bukar</h3>
+              <span class="inline-block text-xs font-bold font-mono uppercase text-[#FF4288] mb-3">Software & Database Engineer</span>
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Full-stack backend architect specializing in secure database infrastructure, encrypted data sync protocols, and high-availability offline-first storage engines. Guarantees NDPA security compliance.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-100 text-xs font-medium text-gray-500">
+              Offline SQLite & NDPA Encryption
+            </div>
           </div>
         </div>
 
         <!-- Abubakar -->
-        <div style="background:#fff; border:1px solid var(--border-pink); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-subtle); display:flex; flex-direction:column;">
-          <div style="width:100%; aspect-ratio:1; overflow:hidden;">
-            <img src="assets/team-abubakar.jpg" alt="Abubakar Hamza Yahya - Senior Developer & Data Scientist" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top;">
+        <div class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 hover:border-pink-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
+          <div class="w-full aspect-[4/3] overflow-hidden bg-pink-100/50">
+            <img src="assets/team-abubakar.jpg" alt="Abubakar Hamza Yahya - Senior Developer & Data Scientist" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
           </div>
-          <div style="padding:22px; display:flex; flex-direction:column; flex:1;">
-            <h3 style="font-size:1.18rem;">Abubakar Hamza Yahya</h3>
-            <span style="font-family:'Space Mono'; font-size:0.75rem; color:var(--primary-pink); font-weight:700; text-transform:uppercase; margin:4px 0 10px; display:block;">Senior Developer & Data Scientist</span>
-            <p style="font-size:0.88rem; color:var(--ink-body); line-height:1.6;">Leads AI/ML system architecture and natural language understanding models for Zahera. Specializes in multilingual fine-tuning for low-resource Nigerian languages and offline inference.</p>
+          <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-1">Abubakar Hamza Yahya</h3>
+              <span class="inline-block text-xs font-bold font-mono uppercase text-[#FF4288] mb-3">Senior Developer & Data Scientist</span>
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Leads AI/ML system architecture and natural language understanding models for Zahera. Specializes in multilingual fine-tuning for low-resource Nigerian languages and offline inference.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-100 text-xs font-medium text-gray-500">
+              Multilingual NLP & Dialect Fine-Tuning
+            </div>
           </div>
         </div>
 
         <!-- Abdussalam -->
-        <div style="background:#fff; border:1px solid var(--border-pink); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-subtle); display:flex; flex-direction:column;">
-          <div style="width:100%; aspect-ratio:1; overflow:hidden;">
-            <img src="assets/team-abdussalam.jpg" alt="Abdussalam AbdulRahman - Software Developer" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top;">
+        <div class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 hover:border-pink-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
+          <div class="w-full aspect-[4/3] overflow-hidden bg-pink-100/50">
+            <img src="assets/team-abdussalam.jpg" alt="Abdussalam AbdulRahman - Software Developer" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy">
           </div>
-          <div style="padding:22px; display:flex; flex-direction:column; flex:1;">
-            <h3 style="font-size:1.18rem;">Abdussalam AbdulRahman</h3>
-            <span style="font-family:'Space Mono'; font-size:0.75rem; color:var(--primary-pink); font-weight:700; text-transform:uppercase; margin:4px 0 10px; display:block;">Software Developer</span>
-            <p style="font-size:0.88rem; color:var(--ink-body); line-height:1.6;">B.Tech in Information Technology with deep experience building mobile and web apps across Flutter, Laravel, and MySQL. Specializes in intuitive mobile user interfaces and voice synthesis.</p>
+          <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-1">Abdussalam AbdulRahman</h3>
+              <span class="inline-block text-xs font-bold font-mono uppercase text-[#FF4288] mb-3">Software Developer</span>
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                B.Tech in Information Technology with deep experience building mobile and web apps across Flutter, Laravel, and MySQL. Specializes in intuitive mobile user interfaces and voice synthesis.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-gray-100 text-xs font-medium text-gray-500">
+              Mobile Interface & Speech Synthesis
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <!-- END: Leadership Team Grid -->
 
-  <!-- TRACTION & GRANTS -->
-  <section class="talk-showcase-section" id="traction">
-    <div class="wrap">
-      <div style="background:#fff; border:1px solid var(--border-pink); border-radius:var(--radius-xl); padding:36px; box-shadow:var(--shadow-card);">
-        <span class="pill-tag-badge" style="background:var(--primary-pill); color:var(--primary-pill-text); margin-bottom:12px;">Traction & Grants</span>
-        <h2 style="font-size:2rem; margin-bottom:18px;">Early Validation & Global Recognition</h2>
+    <!-- BEGIN: Traction & Grants Table -->
+    <section class="max-w-6xl mx-auto px-6 mb-24" id="traction">
+      <div class="bg-white rounded-3xl border border-gray-200/80 p-8 sm:p-12 shadow-xl">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF4288]/10 text-[#D81B60] text-xs font-bold uppercase tracking-wider mb-4">
+          Traction & Grants
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-8">
+          Early Validation & Global Recognition
+        </h2>
 
-        <div style="overflow-x:auto;">
-          <table style="width:100%; border-collapse:collapse; text-align:left;">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
             <thead>
-              <tr style="background:var(--surface-card-pink); font-family:'Space Mono'; font-size:0.75rem; color:var(--primary-deep);">
-                <th style="padding:14px 18px; border-bottom:1px solid var(--border-pink);">Organization / Grant</th>
-                <th style="padding:14px 18px; border-bottom:1px solid var(--border-pink);">Recognition Details</th>
-                <th style="padding:14px 18px; border-bottom:1px solid var(--border-pink);">Impact Milestone</th>
+              <tr class="border-b border-pink-100 bg-pink-50/50 text-xs font-bold font-mono text-[#D81B60] uppercase">
+                <th class="py-4 px-6 rounded-l-2xl">Organization / Grant</th>
+                <th class="py-4 px-6">Recognition Details</th>
+                <th class="py-4 px-6 rounded-r-2xl">Impact Milestone</th>
               </tr>
             </thead>
-            <tbody style="font-size:0.92rem;">
-              <tr style="border-bottom:1px solid var(--border-pink);">
-                <td style="padding:14px 18px; font-weight:700; color:var(--primary-deep);">CoElevate Grant</td>
-                <td style="padding:14px 18px; font-weight:700;">Selected as Inaugural Beneficiary ($5,000 Grant)</td>
-                <td style="padding:14px 18px; color:var(--ink-body);">Seed funding for Kaduna and Kano clinic pilot rollout</td>
+            <tbody class="divide-y divide-gray-100 text-sm">
+              <tr class="hover:bg-pink-50/30 transition-colors">
+                <td class="py-5 px-6 font-bold text-gray-900 flex items-center gap-2">
+                  <span class="text-[#FF4288]">🏆</span>
+                  <span>CoElevate Grant</span>
+                </td>
+                <td class="py-5 px-6 font-semibold text-[#D81B60]">
+                  Selected as Inaugural Beneficiary ($5,000 Grant)
+                </td>
+                <td class="py-5 px-6 text-gray-600">
+                  Seed funding for Kaduna and Kano clinic pilot rollout
+                </td>
               </tr>
-              <tr style="border-bottom:1px solid var(--border-pink);">
-                <td style="padding:14px 18px; font-weight:700; color:var(--primary-deep);">UNDP Lean Innovation</td>
-                <td style="padding:14px 18px;">Nominated Innovation Beneficiary</td>
-                <td style="padding:14px 18px; color:var(--ink-body);">Recognized for solving high maternal health disparities in Northern Nigeria</td>
+              <tr class="hover:bg-pink-50/30 transition-colors">
+                <td class="py-5 px-6 font-bold text-gray-900 flex items-center gap-2">
+                  <span class="text-[#FF4288]">🌍</span>
+                  <span>UNDP Lean Innovation</span>
+                </td>
+                <td class="py-5 px-6 font-semibold text-gray-800">
+                  Nominated Innovation Beneficiary
+                </td>
+                <td class="py-5 px-6 text-gray-600">
+                  Recognized for solving maternal health disparities in Northern Nigeria
+                </td>
               </tr>
-              <tr>
-                <td style="padding:14px 18px; font-weight:700; color:var(--primary-deep);">KOICA Youth Leaders</td>
-                <td style="padding:14px 18px;">Selected Participant (Private Sector Track)</td>
-                <td style="padding:14px 18px; color:var(--ink-body);">Capacity building and global health tech acceleration</td>
+              <tr class="hover:bg-pink-50/30 transition-colors">
+                <td class="py-5 px-6 font-bold text-gray-900 flex items-center gap-2">
+                  <span class="text-[#FF4288]">🚀</span>
+                  <span>KOICA Youth Leaders</span>
+                </td>
+                <td class="py-5 px-6 font-semibold text-gray-800">
+                  Selected Participant (Private Sector Track)
+                </td>
+                <td class="py-5 px-6 text-gray-600">
+                  Capacity building and international health tech acceleration
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <!-- END: Traction & Grants Table -->
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-disclaimer-card" data-i18n="footer_disclaimer">
-      Zahera provides general reproductive health guidance developed with Nigerian clinicians and is not a replacement for emergency hospital care. Always consult qualified health professionals for urgent symptoms.
-    </div>
-    <div class="footer-main-row">
-      <div>
-        <a href="index.html" class="nav-logo" style="margin-bottom:8px;">
-          <span class="logo-ribbon-badge">🌸</span>
-          <span>ZAHERA<span class="logo-pink-text">.TECH</span></span>
-        </a>
-        <p style="font-size:0.86rem; color:var(--ink-body); max-width:320px; line-height:1.55;" data-i18n="footer_tagline">Your AI health companion. In your language. Even offline.</p>
-      </div>
-      <div style="display:flex; gap:40px; flex-wrap:wrap;">
-        <div>
-          <h4 style="font-size:0.82rem; font-family:'Space Mono'; text-transform:uppercase; color:var(--primary-pink); margin-bottom:12px;">Platform</h4>
-          <div style="display:flex; flex-direction:column; gap:8px; font-size:0.88rem; color:var(--ink-body);">
-            <a href="features.html" data-internal>Features Deep Dive</a>
-            <a href="about.html" data-internal>About us & Team</a>
-            <a href="https://forms.gle/QRuTUvbqB3L2rk5e6" target="_blank" rel="noopener noreferrer" data-internal>VIP Waitlist</a>
-            <a href="faq.html" data-internal>FAQ & Help</a>
-          </div>
+    <!-- BEGIN: Waitlist Showcase Section -->
+    <section class="w-full bg-[#FFF5F8]/70 border-t border-pink-100/70 py-20 px-6 text-center relative overflow-hidden">
+      <div class="max-w-3xl mx-auto flex flex-col items-center">
+        <div class="inline-flex items-center gap-1.5 px-6 py-2 rounded-full bg-[#FF4288]/10 border border-[#FF4288]/20 text-gray-800 text-sm font-semibold mb-6 shadow-xs">
+          <span class="font-extrabold text-[#D81B60]">1,000+</span>
+          <span>women already waiting</span>
         </div>
-        <div>
-          <h4 style="font-size:0.82rem; font-family:'Space Mono'; text-transform:uppercase; color:var(--primary-pink); margin-bottom:12px;">Company & Legal</h4>
-          <div style="display:flex; flex-direction:column; gap:8px; font-size:0.88rem; color:var(--ink-body);">
-            <a href="contact.html" data-internal>Contact</a>
-            <a href="privacy.html" data-internal>Privacy Policy</a>
-          </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-4">
+          Join Us on Our Mission.
+        </h2>
+
+        <p class="text-sm sm:text-base text-gray-600 max-w-2xl leading-relaxed mb-8">
+          Whether you want early pilot access or are interested in clinical partnerships, we'd love to have you with us.
+        </p>
+
+        <div class="flex flex-wrap justify-center items-center gap-4">
+          <a href="https://forms.gle/QRuTUvbqB3L2rk5e6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FF4288] hover:bg-[#E03375] text-white font-bold text-sm sm:text-base shadow-lg shadow-pink-500/25 transition-all transform hover:scale-105">
+            Join the Pilot Waitlist
+          </a>
+          <a href="contact.html" class="glass-panel text-gray-900 px-8 py-3.5 rounded-full font-bold text-sm sm:text-base hover:bg-white transition-all shadow-sm">
+            Contact Our Team
+          </a>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom-bar">
-      <div>© 2026 Teem Tech Solutions Ltd. All rights reserved.</div>
+    </section>
+    <!-- END: Waitlist Showcase Section -->
+  </main>
+
+  <!-- BEGIN: Unified Footer -->
+  <footer class="border-t border-gray-100 bg-white py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-gray-500">
+      <div class="flex items-center gap-2">
+        <svg fill="none" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2L19.5 12.5L30 16L19.5 19.5L16 30L12.5 19.5L2 16L12.5 12.5L16 2Z" fill="#FF4288"></path>
+        </svg>
+        <span class="font-bold text-gray-900">Zahera Tech</span>
+        <span>— © 2026 Teem Tech Solutions Ltd.</span>
+      </div>
+
+      <div class="flex gap-6 font-medium">
+        <a href="features.html" class="hover:text-[#FF4288] transition-colors">Features</a>
+        <a href="about.html" class="text-[#FF4288] font-bold">About Us</a>
+        <a href="faq.html" class="hover:text-[#FF4288] transition-colors">FAQ</a>
+        <a href="contact.html" class="hover:text-[#FF4288] transition-colors">Contact</a>
+        <a href="privacy.html" class="hover:text-[#FF4288] transition-colors">Privacy Policy</a>
+      </div>
     </div>
   </footer>
+  <!-- END: Unified Footer -->
 
-<script src="translations.js"></script>
-<script src="script.js"></script>
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

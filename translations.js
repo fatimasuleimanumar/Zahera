@@ -344,6 +344,10 @@ function zaheraApplyLang(lang) {
   document.documentElement.setAttribute('lang', lang);
 }
 
+window.zaheraSetLang = zaheraSetLang;
+window.zaheraGetLang = zaheraGetLang;
+window.setLanguage = zaheraSetLang;
+
 // Build Language Menu
 document.addEventListener('DOMContentLoaded', () => {
   const langMenu = document.getElementById('langMenu');
@@ -351,11 +355,14 @@ document.addEventListener('DOMContentLoaded', () => {
     langMenu.innerHTML = '';
     ZAHERA_LANGS.forEach((item) => {
       const b = document.createElement('button');
+      b.className = 'w-full text-left px-4 py-2.5 text-xs font-semibold hover:bg-pink-50 flex items-center justify-between transition-colors cursor-pointer text-gray-800';
       b.setAttribute('data-lang', item.code);
-      b.innerHTML = `<span>${item.native}</span><strong>${item.code.toUpperCase()}</strong>`;
+      b.innerHTML = `<span>${item.label}</span><span class="font-mono text-[10px] text-gray-400 font-bold">${item.code.toUpperCase()}</span>`;
       b.addEventListener('click', () => {
         zaheraSetLang(item.code);
-        langMenu.classList.remove('open');
+        const langBtnLabel = document.getElementById('langBtnLabel');
+        if (langBtnLabel) langBtnLabel.innerText = item.label;
+        langMenu.classList.add('hidden');
       });
       langMenu.appendChild(b);
     });

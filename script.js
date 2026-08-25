@@ -1,37 +1,28 @@
 /* ===========================================================
-   ZAHERA TECH — INTERACTIVE SCRIPT & ANIMATION CONTROLS
+   ZAHERA TECH — UNIFIED INTERACTIVE SCRIPT & EVENT CONTROLS
+   Supports landing page, features showcase, FAQ accordion,
+   mobile navigation, and multilingual translations.
    =========================================================== */
 
 function initApp() {
-  // 1. Hero Card Loading Progress Bar & Counter Animation
-  const heroProgressBar = document.getElementById('heroProgressBar');
-  const heroStatNumber = document.getElementById('heroStatNumber');
+  // 1. Mobile Menu Drawer Toggle (All Pages)
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
 
-  if (heroProgressBar) {
-    heroProgressBar.classList.remove('hero-progress-animated');
-    // Trigger reflow to restart animation on fresh page load
-    void heroProgressBar.offsetWidth;
-    heroProgressBar.classList.add('hero-progress-animated');
-  }
+  if (mobileMenuBtn && mobileMenuDrawer) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenuDrawer.classList.toggle('hidden');
+    });
 
-  if (heroStatNumber) {
-    let count = 0;
-    const target = 94;
-    const duration = 1600;
-    const intervalTime = 25;
-    const step = target / (duration / intervalTime);
-
-    const timer = setInterval(() => {
-      count += step;
-      if (count >= target) {
-        count = target;
-        clearInterval(timer);
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuDrawer.contains(e.target) && e.target !== mobileMenuBtn) {
+        mobileMenuDrawer.classList.add('hidden');
       }
-      heroStatNumber.innerText = Math.round(count) + '%';
-    }, intervalTime);
+    });
   }
 
-  // 2. Language Dropdown Toggle
+  // 2. Language Dropdown Toggle (All Pages)
   const langBtn = document.getElementById('langBtn');
   const langMenu = document.getElementById('langMenu');
   const langBtnLabel = document.getElementById('langBtnLabel');
@@ -53,30 +44,171 @@ function initApp() {
         const langName = btn.innerText;
         if (langBtnLabel) langBtnLabel.innerText = langName;
         langMenu.classList.add('hidden');
-        if (window.setLanguage) window.setLanguage(lang);
+        if (window.zaheraSetLang) {
+          window.zaheraSetLang(lang);
+        }
       });
     });
   }
 
-  // 3. Life Stage Card Click Selector (In Smartphone Mockup)
-  const lifeStageCards = document.querySelectorAll('.life-stage-card');
-  lifeStageCards.forEach((card) => {
-    card.addEventListener('click', () => {
-      lifeStageCards.forEach((c) => {
-        c.className = 'life-stage-card relative p-3.5 rounded-2xl cursor-pointer transition-all duration-300 text-left bg-white/10 border border-white/20 hover:bg-white/15 backdrop-blur-sm';
-        const check = c.querySelector('.check-badge');
-        if (check) check.remove();
+  // 3. Features Page: Interactive Life Stage Mockup Switcher
+  const featureStageTabs = document.getElementById('featureStageTabs');
+  const featureActiveScreen = document.getElementById('featureActiveScreen');
+
+  if (featureStageTabs && featureActiveScreen) {
+    const stageBtns = featureStageTabs.querySelectorAll('.feature-stage-btn');
+    stageBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Reset all buttons
+        stageBtns.forEach((b) => {
+          b.className = 'feature-stage-btn w-full text-left p-4 rounded-2xl bg-white/10 border border-white/15 text-gray-200 hover:bg-white/15 font-semibold flex items-center justify-between transition-all cursor-pointer';
+          const badge = b.querySelector('.stage-badge');
+          if (badge) {
+            badge.className = 'stage-badge text-xs text-gray-300';
+            badge.innerText = 'Tap to view';
+          }
+        });
+
+        // Set active button
+        btn.className = 'feature-stage-btn active-stage w-full text-left p-4 rounded-2xl bg-white/20 border-2 border-white text-white font-bold flex items-center justify-between transition-all cursor-pointer';
+        const activeBadge = btn.querySelector('.stage-badge');
+        if (activeBadge) {
+          activeBadge.className = 'stage-badge text-xs bg-[#FF4288] text-white px-2.5 py-0.5 rounded-full font-semibold';
+          activeBadge.innerText = 'Active';
+        }
+
+        // Change Mockup Image with Fade
+        const targetScreen = btn.getAttribute('data-screen');
+        if (targetScreen) {
+          featureActiveScreen.style.opacity = '0';
+          setTimeout(() => {
+            featureActiveScreen.src = targetScreen;
+            featureActiveScreen.style.opacity = '1';
+          }, 150);
+        }
+      });
+    });
+  }
+
+  // 4. FAQ Page: Real-time Search and Category Filter
+  const faqSearchInput = document.getElementById('faqSearchInput');
+  const faqCatBtns = document.querySelectorAll('.faq-cat-btn');
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  let currentCategory = 'all';
+
+  function filterFaqItems() {
+    const query = (faqSearchInput ? faqSearchInput.value : '').toLowerCase().trim();
+
+    faqItems.forEach((item) => {
+      const itemCat = item.getAttribute('data-cat') || '';
+      const text = item.innerText.toLowerCase();
+
+      const matchesCat = currentCategory === 'all' || itemCat === currentCategory;
+      const matchesQuery = !query || text.includes(query);
+
+      if (matchesCat && matchesQuery) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  if (faqSearchInput) {
+    faqSearchInput.addEventListener('input', filterFaqItems);
+  }
+
+  if (faqCatBtns.length > 0) {
+    faqCatBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        faqCatBtns.forEach((b) => {
+          b.className = 'faq-cat-btn px-5 py-2 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 transition cursor-pointer';
+        });
+        btn.className = 'faq-cat-btn active-cat px-5 py-2 rounded-full text-xs font-bold bg-[#FF4288] text-white shadow-xs transition cursor-pointer';
+        currentCategory = btn.getAttribute('data-cat') || 'all';
+        filterFaqItems();
+      });
+    });
+  }
+
+  // 5. FAQ Page: Accordion Expand/Collapse
+  const faqHeaders = document.querySelectorAll('.faq-header');
+  faqHeaders.forEach((header) => {
+    header.addEventListener('click', () => {
+      const item = header.closest('.faq-item');
+      if (!item) return;
+      const body = item.querySelector('.faq-body');
+      const icon = item.querySelector('.faq-icon');
+
+      const isExpanded = body && !body.classList.contains('hidden');
+
+      // Close all other items
+      document.querySelectorAll('.faq-item').forEach((otherItem) => {
+        const otherBody = otherItem.querySelector('.faq-body');
+        const otherIcon = otherItem.querySelector('.faq-icon');
+        if (otherBody) otherBody.classList.add('hidden');
+        if (otherIcon) {
+          otherIcon.innerText = '+';
+          otherIcon.classList.remove('rotate-45');
+        }
       });
 
-      card.className = 'life-stage-card relative p-3.5 rounded-2xl cursor-pointer transition-all duration-300 text-left bg-white/25 border-2 border-white shadow-lg backdrop-blur-md';
-      const checkBadge = document.createElement('div');
-      checkBadge.className = 'check-badge absolute top-2.5 right-2.5 w-5 h-5 rounded-full bg-white text-[#913BE2] flex items-center justify-center shadow-xs';
-      checkBadge.innerHTML = '<svg fill="none" height="12" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" width="12"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-      card.appendChild(checkBadge);
+      // Toggle current item
+      if (!isExpanded && body) {
+        body.classList.remove('hidden');
+        if (icon) {
+          icon.innerText = '−';
+        }
+      }
     });
   });
 
-  // 4. Stitch AI Demo: Language & Questions Switcher
+  // 6. Contact Page Form Submit Handler
+  const contactForm = document.getElementById('contactForm');
+  const contactSuccessMsg = document.getElementById('contactSuccessMsg');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (contactSuccessMsg) {
+        contactSuccessMsg.classList.remove('hidden');
+        contactForm.reset();
+        setTimeout(() => {
+          contactSuccessMsg.classList.add('hidden');
+        }, 6000);
+      }
+    });
+  }
+
+  // 7. Landing Page Hero: Animated Progress Bar & Counter
+  const heroProgressBar = document.getElementById('heroProgressBar');
+  const heroStatNumber = document.getElementById('heroStatNumber');
+
+  if (heroProgressBar) {
+    heroProgressBar.classList.remove('hero-progress-animated');
+    void heroProgressBar.offsetWidth; // trigger reflow
+    heroProgressBar.classList.add('hero-progress-animated');
+  }
+
+  if (heroStatNumber) {
+    let count = 0;
+    const target = 94;
+    const duration = 1600;
+    const intervalTime = 25;
+    const step = target / (duration / intervalTime);
+
+    const timer = setInterval(() => {
+      count += step;
+      if (count >= target) {
+        count = target;
+        clearInterval(timer);
+      }
+      heroStatNumber.innerText = Math.round(count) + '%';
+    }, intervalTime);
+  }
+
+  // 8. Stitch AI Demo: Language & Questions Switcher (Landing Page)
   const demoLangRow = document.getElementById('demoLangRow');
   const demoQuestionsList = document.getElementById('demoQuestionsList');
   const aiAnswerText = document.getElementById('aiAnswerText');
@@ -153,28 +285,7 @@ function initApp() {
     }, 150);
   }
 
-  // 5. Audio Listen Button Animation
-  const listenAudioBtn = document.getElementById('listenAudioBtn');
-  let isPlaying = false;
-  if (listenAudioBtn) {
-    listenAudioBtn.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-      if (isPlaying) {
-        listenAudioBtn.innerHTML = '<span>Playing audio...</span> <span>⏸</span>';
-        listenAudioBtn.classList.add('bg-[#FF4288]', 'text-white');
-        setTimeout(() => {
-          listenAudioBtn.innerHTML = '<span>Listen to answer</span> <svg fill="currentColor" height="12" viewBox="0 0 24 24" width="12"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>';
-          listenAudioBtn.classList.remove('bg-[#FF4288]', 'text-white');
-          isPlaying = false;
-        }, 4000);
-      } else {
-        listenAudioBtn.innerHTML = '<span>Listen to answer</span> <svg fill="currentColor" height="12" viewBox="0 0 24 24" width="12"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>';
-        listenAudioBtn.classList.remove('bg-[#FF4288]', 'text-white');
-      }
-    });
-  }
-
-  // 6. African Fruits Pregnancy Stepper Animation
+  // 9. African Fruits Pregnancy Stepper (Landing Page)
   const fruitMilestones = [
     { week: 4, fruit: 'Poppy Seed (Taba)', weight: '0.1g', length: '1mm', tip: 'The blastocyst is implanting into the uterine wall.', icon: '🌱' },
     { week: 8, fruit: 'Garden Egg (Gauta / Igba)', weight: '1g', length: '1.6cm', tip: 'Tiny fingers, toes, and facial features are rapidly forming.', icon: '🍆' },
